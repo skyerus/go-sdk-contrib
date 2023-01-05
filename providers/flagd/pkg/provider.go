@@ -15,6 +15,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"os"
 	"strconv"
+	"time"
 )
 
 const defaultLRUCacheSize int = 1000
@@ -26,6 +27,9 @@ type Provider struct {
 	cache                            Cache[string, interface{}]
 	providerConfiguration            *ProviderConfiguration
 	eventStreamConnectionMaxAttempts int
+	isReady                          bool
+	waitUntilReadyBackoff            time.Duration
+	waitUntilReadyTimeout            time.Duration
 }
 type ProviderConfiguration struct {
 	Port            uint16
@@ -43,6 +47,8 @@ func NewProvider(opts ...ProviderOption) *Provider {
 		// values (default values are then set after the options are run via applyDefaults())
 		providerConfiguration:            &ProviderConfiguration{},
 		eventStreamConnectionMaxAttempts: 5,
+		waitUntilReadyBackoff:            50 * time.Millisecond,
+		waitUntilReadyTimeout:            time.Second,
 	}
 	WithLRUCache(defaultLRUCacheSize)(provider)
 	for _, opt := range opts {
@@ -496,9 +502,27 @@ func (p *Provider) handleConfigurationChangeEvent(ctx context.Context, event *sc
 }
 
 func (p *Provider) handleProviderReadyEvent() {
+	p.isReady = true
+
 	if !p.cacheEnabled {
 		return
 	}
 
 	p.cache.Purge() // in case events were missed while the connection was down
+}
+
+func (p *Provider) WaitUntilReady() error {
+	timeoutChan := time.After(p.waitUntilReadyTimeout)
+	for {
+		if p.isReady {
+			return nil
+		}
+
+		select {
+		case <-timeoutChan:
+			return errors.New("timed out")
+		case <-time.After(p.waitUntilReadyBackoff):
+			continue
+		}
+	}
 }
