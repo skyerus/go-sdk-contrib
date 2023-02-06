@@ -10,7 +10,7 @@ require (
 	github.com/golang/mock v1.6.0
 	github.com/google/go-cmp v0.5.9
 	github.com/hashicorp/golang-lru/v2 v2.0.1
-	github.com/open-feature/flagd v0.3.4
+	github.com/open-feature/flagd v0.3.5
 	github.com/open-feature/go-sdk v1.1.0
 	golang.org/x/net v0.5.0
 	google.golang.org/protobuf v1.28.1
