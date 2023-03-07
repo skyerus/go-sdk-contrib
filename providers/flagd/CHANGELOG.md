@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.1.11](https://github.com/skyerus/go-sdk-contrib/compare/providers/flagd-v0.1.10...providers/flagd/v0.1.11) (2023-03-07)
+
+
+### Features
+
+* aligned environment variables application with flagd provider spec ([#119](https://github.com/skyerus/go-sdk-contrib/issues/119)) ([5ee1f2c](https://github.com/skyerus/go-sdk-contrib/commit/5ee1f2c8af0d41eb3820d32ca7ffe30777a2d12a))
+* expose ProviderOption to set logr logger & implemented structured logging with levels ([#93](https://github.com/skyerus/go-sdk-contrib/issues/93)) ([ac5e8dd](https://github.com/skyerus/go-sdk-contrib/commit/ac5e8dd274c9fd811dccaca85d3aba33994b480b))
+* exposed WithTLS provider option. Allow tls to be used without cert path (default to host system's CAs) ([#112](https://github.com/skyerus/go-sdk-contrib/issues/112)) ([c5bae5f](https://github.com/skyerus/go-sdk-contrib/commit/c5bae5f32b473796bdc2b7c8614439be53a37739))
+* handle consolidated configuration change event ([#66](https://github.com/skyerus/go-sdk-contrib/issues/66)) ([69cb619](https://github.com/skyerus/go-sdk-contrib/commit/69cb619b6cf0a3095ae0bb2f6544e22fb3d5786e))
+
+
+### Bug Fixes
+
+* apply lru cache to provider ([#131](https://github.com/skyerus/go-sdk-contrib/issues/131)) ([79fe435](https://github.com/skyerus/go-sdk-contrib/commit/79fe435181fc9cfa95f2f7ef49a007a784cc2c88))
+* **deps:** update module github.com/bufbuild/connect-go to v1.5.1 ([#99](https://github.com/skyerus/go-sdk-contrib/issues/99)) ([0f7c8a4](https://github.com/skyerus/go-sdk-contrib/commit/0f7c8a435b4acfc75317a186c871b020c1432aed))
+* **deps:** update module github.com/bufbuild/connect-go to v1.5.2 ([#118](https://github.com/skyerus/go-sdk-contrib/issues/118)) ([0207626](https://github.com/skyerus/go-sdk-contrib/commit/0207626f688d61a6d26dbfd3086e25277241401b))
+* **deps:** update module github.com/open-feature/flagd to v0.3.4 ([#83](https://github.com/skyerus/go-sdk-contrib/issues/83)) ([958c9fa](https://github.com/skyerus/go-sdk-contrib/commit/958c9fa81637cbacf59259d100d74407f41cd87c))
+* **deps:** update module github.com/open-feature/flagd to v0.3.7 ([#106](https://github.com/skyerus/go-sdk-contrib/issues/106)) ([497ed34](https://github.com/skyerus/go-sdk-contrib/commit/497ed34add9d3f77fdcd3eb48e175aa39cc4388f))
+* **deps:** update module github.com/open-feature/go-sdk to v1.2.0 ([#103](https://github.com/skyerus/go-sdk-contrib/issues/103)) ([eedb577](https://github.com/skyerus/go-sdk-contrib/commit/eedb577745fd98d5189132ebbaa8eb82bdf99dd8))
+* **deps:** update module golang.org/x/net to v0.5.0 ([#56](https://github.com/skyerus/go-sdk-contrib/issues/56)) ([168d6cf](https://github.com/skyerus/go-sdk-contrib/commit/168d6cf9b7047ba412c239f2349d2e3d4b02a21d))
+* Purge cache if config change event handling fails ([#85](https://github.com/skyerus/go-sdk-contrib/issues/85)) ([bf47049](https://github.com/skyerus/go-sdk-contrib/commit/bf4704959411f3957a8c9266f0756b768c915ce1))
+* tidy workspaces ([#97](https://github.com/skyerus/go-sdk-contrib/issues/97)) ([c71a5ec](https://github.com/skyerus/go-sdk-contrib/commit/c71a5ec7686ec0572bb47f17dbca7e0ec48252d7))
+
 ## [0.1.10](https://github.com/open-feature/go-sdk-contrib/compare/providers/flagd/v0.1.9...providers/flagd/v0.1.10) (2023-03-02)
 
 
