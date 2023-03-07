@@ -17,3 +17,34 @@ jobs:
           command: manifest
           token: ${{secrets.GITHUB_TOKEN}}
           default-branch: main
+      - name: echo output
+        run: |
+          ${{toJSON(steps.release.outputs)}}
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+      release_tag_name: ${{ steps.release.outputs.tag_name }}
+  sbom:
+    needs: release-please
+    runs-on: ubuntu-latest
+    if: ${{ needs.release-please.outputs.releases_created }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Download cyclonedx-gomod
+        uses: CycloneDX/gh-gomod-generate-sbom@v1
+        with:
+          version: v1
+      - name: Generate SBOMs
+        run: |
+          mkdir boms
+          find . -type f -name 'go.mod' -exec dirname {} \; | sort |while read fname; do
+            bom_filename=`echo "$fname" | cut -c 3- | sed -e 's/\//\_/g'`
+            cyclonedx-gomod mod -licenses -json -output "boms/${bom_filename}_bom.json" $fname
+          done
+      - name: Upload SBOMs to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: boms/*_bom.json
+          tag: ${{ needs.release-please.outputs.release_tag_name }}
+          file_glob: true
