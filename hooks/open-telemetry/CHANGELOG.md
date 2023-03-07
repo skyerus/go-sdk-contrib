@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.0](https://github.com/skyerus/go-sdk-contrib/compare/hooks/open-telemetry-v0.2.3...hooks/open-telemetry/v0.3.0) (2023-03-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update OTel Hook to conform to official conventions ([#87](https://github.com/skyerus/go-sdk-contrib/issues/87))
+
+### Features
+
+* ⚠️ requires OpenFeature Go SDK v1.3.0 or above ⚠️ absorbed Hook API changes ([#130](https://github.com/skyerus/go-sdk-contrib/issues/130)) ([a65b009](https://github.com/skyerus/go-sdk-contrib/commit/a65b00957a425b89c261a979f81dcfdf2f5a2bcb))
+* Update OTel Hook to conform to official conventions ([#87](https://github.com/skyerus/go-sdk-contrib/issues/87)) ([4e725ae](https://github.com/skyerus/go-sdk-contrib/commit/4e725ae4ebd80a95f617b64490f7a57ce2441fa5))
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/open-feature/go-sdk to v1.2.0 ([#103](https://github.com/skyerus/go-sdk-contrib/issues/103)) ([eedb577](https://github.com/skyerus/go-sdk-contrib/commit/eedb577745fd98d5189132ebbaa8eb82bdf99dd8))
+* **deps:** update opentelemetry-go monorepo to v1.12.0 ([#57](https://github.com/skyerus/go-sdk-contrib/issues/57)) ([e48e4a0](https://github.com/skyerus/go-sdk-contrib/commit/e48e4a0458a38eb1a028c5c3570ceb522c7e7319))
+
 ## [0.2.3](https://github.com/open-feature/go-sdk-contrib/compare/hooks/open-telemetry/v0.2.2...hooks/open-telemetry/v0.2.3) (2023-03-02)
 
 
