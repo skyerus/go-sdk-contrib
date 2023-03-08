@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.5](https://github.com/skyerus/go-sdk-contrib/compare/providers/go-feature-flag-v0.1.4...providers/go-feature-flag/v0.1.5) (2023-03-08)
+
+
+### Features
+
+* Update provider to be compatible with GO Feature Flag v1.0.0 ([#102](https://github.com/skyerus/go-sdk-contrib/issues/102)) ([77bf37d](https://github.com/skyerus/go-sdk-contrib/commit/77bf37d50c3e41f7290c632db5ef352710949e49))
+
+
+### Bug Fixes
+
+* **deps:** update module github.com/open-feature/go-sdk to v1.1.0 ([#91](https://github.com/skyerus/go-sdk-contrib/issues/91)) ([35f39f8](https://github.com/skyerus/go-sdk-contrib/commit/35f39f8f002006cc35c3620f3c33d6f96ebfab42))
+* **deps:** update module github.com/open-feature/go-sdk to v1.2.0 ([#103](https://github.com/skyerus/go-sdk-contrib/issues/103)) ([eedb577](https://github.com/skyerus/go-sdk-contrib/commit/eedb577745fd98d5189132ebbaa8eb82bdf99dd8))
+* **deps:** update module github.com/thomaspoignant/go-feature-flag to v0.28.2 ([#71](https://github.com/skyerus/go-sdk-contrib/issues/71)) ([9435118](https://github.com/skyerus/go-sdk-contrib/commit/94351180732f0d4135229b02d3b8d1d046d09c47))
+* **deps:** update module github.com/thomaspoignant/go-feature-flag to v1.2.2 ([#105](https://github.com/skyerus/go-sdk-contrib/issues/105)) ([aee48a7](https://github.com/skyerus/go-sdk-contrib/commit/aee48a74de6a0624e2f3836022c222ce994af50b))
+* **deps:** update module github.com/thomaspoignant/go-feature-flag to v1.4.0 ([#124](https://github.com/skyerus/go-sdk-contrib/issues/124)) ([9fc4dca](https://github.com/skyerus/go-sdk-contrib/commit/9fc4dca72a2880fd2fb28f6b656cb2abfef6c7ef))
+
 ## [0.1.4](https://github.com/open-feature/go-sdk-contrib/compare/providers/go-feature-flag/v0.1.3...providers/go-feature-flag/v0.1.4) (2023-02-21)
 
 
